@@ -83,12 +83,12 @@ class ScreenProducts extends StatelessWidget {
                                     data[index].companyName,
                                     overflow: TextOverflow.ellipsis,
                                   )),
-                              const Text('6'),
-                              Text(
-                                data[index].price,
-                                style: const TextStyle(
+                              const Text('qty 6'),
+                              const Text(
+                                '₹ 299',
+                                style: TextStyle(
                                     fontSize: 19, fontWeight: FontWeight.w500),
-                              )
+                              ),
                             ],
                           ),
                         ),
