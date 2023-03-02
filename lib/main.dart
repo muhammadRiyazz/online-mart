@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:online_mart/application/products/products_bloc.dart';
 import 'package:online_mart/presentation/screen%20products/screen_products.dart';
 
 void main() {
@@ -8,12 +10,21 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: ScreenProducts(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => ProductsBloc(),
+        ),
+        // BlocProvider(
+        //   create: (context) => SubjectBloc(),
+        // ),
+      ],
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: ScreenProducts(),
+      ),
     );
   }
 }
