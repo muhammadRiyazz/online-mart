@@ -6,7 +6,6 @@ class ProductsState with _$ProductsState {
       _ProductsState;
 
   factory ProductsState.initial() {
-    //  final List<ProductModal> productlist = Network.getproducts();
     return ProductsState(productlist: []);
   }
 }

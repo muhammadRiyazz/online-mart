@@ -121,8 +121,7 @@ class ScreenProductDetails extends StatelessWidget {
                                                   price: 299,
                                                   qty: state.quandity));
                                         },
-                                        child:
-                                            const Icon(Icons.add_box_outlined)),
+                                        child: const Icon(Icons.remove)),
                                     Text(
                                       state.quandity.toString(),
                                       style: const TextStyle(
@@ -137,8 +136,7 @@ class ScreenProductDetails extends StatelessWidget {
                                                   price: 299,
                                                   qty: state.quandity));
                                         },
-                                        child:
-                                            const Icon(Icons.add_box_outlined))
+                                        child: const Icon(Icons.add))
                                   ],
                                 ),
                               ));
