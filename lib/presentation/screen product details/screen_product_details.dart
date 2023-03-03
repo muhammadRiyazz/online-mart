@@ -18,12 +18,14 @@ class ScreenProductDetails extends StatelessWidget {
     final msize = MediaQuery.of(context).size;
     BlocProvider.of<ProductDetailsBloc>(context)
         .add(Getproductinfo(custid: custid, productid: productid));
+    BlocProvider.of<QuandityBloc>(context)
+        .add(const Newinitial(qty: 1, price: 299));
 
     return Scaffold(
       body: SafeArea(
           child: Column(children: [
         ListTile(
-          title: Text(
+          title: const Text(
             'Product Details',
             style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),
           ),
@@ -31,7 +33,7 @@ class ScreenProductDetails extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
               },
-              child: Icon(Icons.arrow_back_sharp)),
+              child: const Icon(Icons.arrow_back_sharp)),
         ),
         Expanded(
           child: Padding(
@@ -47,16 +49,19 @@ class ScreenProductDetails extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           vertical: 20, horizontal: 20),
                       decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 237, 233, 233),
+                          color: const Color.fromARGB(255, 237, 233, 233),
                           borderRadius: BorderRadius.circular(16)),
                       width: double.infinity,
                       height: 0.35 * msize.height,
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(14),
-                        child: Image.network(
-                          'https://admin.maaxkart.com/${data.image}',
-                          fit: BoxFit.fill,
-                        ),
+                        borderRadius: BorderRadius.circular(24),
+                        child: FadeInImage.assetNetwork(
+                            imageErrorBuilder: (context, error, stackTrace) {
+                              return Image.asset('asset/nope-not-here.webp');
+                            },
+                            placeholder:
+                                'asset/istockphoto-1335247217-612x612.jpg',
+                            image: 'https://admin.maaxkart.com/${data.image}'),
                       ),
                     ),
                     const SizedBox(
@@ -87,7 +92,7 @@ class ScreenProductDetails extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    Pricepart(price: '299', pricetitle: 'Price'),
+                    const Pricepart(price: '299', pricetitle: 'Price'),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 12),
                       child: Row(
@@ -104,7 +109,7 @@ class ScreenProductDetails extends StatelessWidget {
                             builder: (context, state) {
                               return Expanded(
                                   child: Container(
-                                padding: EdgeInsets.symmetric(
+                                padding: const EdgeInsets.symmetric(
                                     horizontal: 15, vertical: 4),
                                 height: 50,
                                 decoration: BoxDecoration(
@@ -145,7 +150,6 @@ class ScreenProductDetails extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const Pricepart(price: '50', pricetitle: 'Discount'),
                     BlocBuilder<QuandityBloc, QuandityState>(
                       builder: (context, state) {
                         return Padding(
@@ -156,7 +160,7 @@ class ScreenProductDetails extends StatelessWidget {
                         );
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     InkWell(

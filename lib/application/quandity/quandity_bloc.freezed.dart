@@ -22,18 +22,21 @@ mixin _$QuandityEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(int qty, int price, int totalqty) increment,
     required TResult Function(int qty, int price) decrease,
+    required TResult Function(int qty, int price) newinitial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int qty, int price, int totalqty)? increment,
     TResult? Function(int qty, int price)? decrease,
+    TResult? Function(int qty, int price)? newinitial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int qty, int price, int totalqty)? increment,
     TResult Function(int qty, int price)? decrease,
+    TResult Function(int qty, int price)? newinitial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -41,18 +44,21 @@ mixin _$QuandityEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(Increment value) increment,
     required TResult Function(Decrease value) decrease,
+    required TResult Function(Newinitial value) newinitial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Increment value)? increment,
     TResult? Function(Decrease value)? decrease,
+    TResult? Function(Newinitial value)? newinitial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Increment value)? increment,
     TResult Function(Decrease value)? decrease,
+    TResult Function(Newinitial value)? newinitial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -186,6 +192,7 @@ class _$Increment implements Increment {
   TResult when<TResult extends Object?>({
     required TResult Function(int qty, int price, int totalqty) increment,
     required TResult Function(int qty, int price) decrease,
+    required TResult Function(int qty, int price) newinitial,
   }) {
     return increment(qty, price, totalqty);
   }
@@ -195,6 +202,7 @@ class _$Increment implements Increment {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int qty, int price, int totalqty)? increment,
     TResult? Function(int qty, int price)? decrease,
+    TResult? Function(int qty, int price)? newinitial,
   }) {
     return increment?.call(qty, price, totalqty);
   }
@@ -204,6 +212,7 @@ class _$Increment implements Increment {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int qty, int price, int totalqty)? increment,
     TResult Function(int qty, int price)? decrease,
+    TResult Function(int qty, int price)? newinitial,
     required TResult orElse(),
   }) {
     if (increment != null) {
@@ -217,6 +226,7 @@ class _$Increment implements Increment {
   TResult map<TResult extends Object?>({
     required TResult Function(Increment value) increment,
     required TResult Function(Decrease value) decrease,
+    required TResult Function(Newinitial value) newinitial,
   }) {
     return increment(this);
   }
@@ -226,6 +236,7 @@ class _$Increment implements Increment {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Increment value)? increment,
     TResult? Function(Decrease value)? decrease,
+    TResult? Function(Newinitial value)? newinitial,
   }) {
     return increment?.call(this);
   }
@@ -235,6 +246,7 @@ class _$Increment implements Increment {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Increment value)? increment,
     TResult Function(Decrease value)? decrease,
+    TResult Function(Newinitial value)? newinitial,
     required TResult orElse(),
   }) {
     if (increment != null) {
@@ -336,6 +348,7 @@ class _$Decrease implements Decrease {
   TResult when<TResult extends Object?>({
     required TResult Function(int qty, int price, int totalqty) increment,
     required TResult Function(int qty, int price) decrease,
+    required TResult Function(int qty, int price) newinitial,
   }) {
     return decrease(qty, price);
   }
@@ -345,6 +358,7 @@ class _$Decrease implements Decrease {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int qty, int price, int totalqty)? increment,
     TResult? Function(int qty, int price)? decrease,
+    TResult? Function(int qty, int price)? newinitial,
   }) {
     return decrease?.call(qty, price);
   }
@@ -354,6 +368,7 @@ class _$Decrease implements Decrease {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int qty, int price, int totalqty)? increment,
     TResult Function(int qty, int price)? decrease,
+    TResult Function(int qty, int price)? newinitial,
     required TResult orElse(),
   }) {
     if (decrease != null) {
@@ -367,6 +382,7 @@ class _$Decrease implements Decrease {
   TResult map<TResult extends Object?>({
     required TResult Function(Increment value) increment,
     required TResult Function(Decrease value) decrease,
+    required TResult Function(Newinitial value) newinitial,
   }) {
     return decrease(this);
   }
@@ -376,6 +392,7 @@ class _$Decrease implements Decrease {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Increment value)? increment,
     TResult? Function(Decrease value)? decrease,
+    TResult? Function(Newinitial value)? newinitial,
   }) {
     return decrease?.call(this);
   }
@@ -385,6 +402,7 @@ class _$Decrease implements Decrease {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Increment value)? increment,
     TResult Function(Decrease value)? decrease,
+    TResult Function(Newinitial value)? newinitial,
     required TResult orElse(),
   }) {
     if (decrease != null) {
@@ -405,6 +423,160 @@ abstract class Decrease implements QuandityEvent {
   @override
   @JsonKey(ignore: true)
   _$$DecreaseCopyWith<_$Decrease> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$NewinitialCopyWith<$Res>
+    implements $QuandityEventCopyWith<$Res> {
+  factory _$$NewinitialCopyWith(
+          _$Newinitial value, $Res Function(_$Newinitial) then) =
+      __$$NewinitialCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int qty, int price});
+}
+
+/// @nodoc
+class __$$NewinitialCopyWithImpl<$Res>
+    extends _$QuandityEventCopyWithImpl<$Res, _$Newinitial>
+    implements _$$NewinitialCopyWith<$Res> {
+  __$$NewinitialCopyWithImpl(
+      _$Newinitial _value, $Res Function(_$Newinitial) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? qty = null,
+    Object? price = null,
+  }) {
+    return _then(_$Newinitial(
+      qty: null == qty
+          ? _value.qty
+          : qty // ignore: cast_nullable_to_non_nullable
+              as int,
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$Newinitial implements Newinitial {
+  const _$Newinitial({required this.qty, required this.price});
+
+  @override
+  final int qty;
+  @override
+  final int price;
+
+  @override
+  String toString() {
+    return 'QuandityEvent.newinitial(qty: $qty, price: $price)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$Newinitial &&
+            (identical(other.qty, qty) || other.qty == qty) &&
+            (identical(other.price, price) || other.price == price));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, qty, price);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NewinitialCopyWith<_$Newinitial> get copyWith =>
+      __$$NewinitialCopyWithImpl<_$Newinitial>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int qty, int price, int totalqty) increment,
+    required TResult Function(int qty, int price) decrease,
+    required TResult Function(int qty, int price) newinitial,
+  }) {
+    return newinitial(qty, price);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int qty, int price, int totalqty)? increment,
+    TResult? Function(int qty, int price)? decrease,
+    TResult? Function(int qty, int price)? newinitial,
+  }) {
+    return newinitial?.call(qty, price);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int qty, int price, int totalqty)? increment,
+    TResult Function(int qty, int price)? decrease,
+    TResult Function(int qty, int price)? newinitial,
+    required TResult orElse(),
+  }) {
+    if (newinitial != null) {
+      return newinitial(qty, price);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Increment value) increment,
+    required TResult Function(Decrease value) decrease,
+    required TResult Function(Newinitial value) newinitial,
+  }) {
+    return newinitial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Increment value)? increment,
+    TResult? Function(Decrease value)? decrease,
+    TResult? Function(Newinitial value)? newinitial,
+  }) {
+    return newinitial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Increment value)? increment,
+    TResult Function(Decrease value)? decrease,
+    TResult Function(Newinitial value)? newinitial,
+    required TResult orElse(),
+  }) {
+    if (newinitial != null) {
+      return newinitial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Newinitial implements QuandityEvent {
+  const factory Newinitial({required final int qty, required final int price}) =
+      _$Newinitial;
+
+  @override
+  int get qty;
+  @override
+  int get price;
+  @override
+  @JsonKey(ignore: true)
+  _$$NewinitialCopyWith<_$Newinitial> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

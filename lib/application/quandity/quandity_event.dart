@@ -10,4 +10,8 @@ class QuandityEvent with _$QuandityEvent {
     required int qty,
     required int price,
   }) = Decrease;
+  const factory QuandityEvent.newinitial({
+    required int qty,
+    required int price,
+  }) = Newinitial;
 }

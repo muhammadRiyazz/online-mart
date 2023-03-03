@@ -13,11 +13,11 @@ class Network {
 
     final rspns = await http.post(
       url,
-      // body: {'location_id': '429'},
+      body: {'location_id': '429'},
     );
 
     final data = ProductModalFromJson(rspns.body);
-    log(data[3].proName);
+    // log(data[3].proName);
 
     return data;
   }
@@ -33,7 +33,7 @@ class Network {
     final json = jsonDecode(rspns.body);
 
     final data = ProductDetailsModal.fromJson(json);
-    log(data.category);
+    //log(data.category);
 
     return data;
   }

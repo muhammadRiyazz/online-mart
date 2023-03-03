@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -48,9 +50,9 @@ class ScreenProducts extends StatelessWidget {
                           ));
                         },
                         child: Container(
-                          padding: EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 238, 238, 235),
+                              color: const Color.fromARGB(255, 238, 238, 235),
                               borderRadius: BorderRadius.circular(10)),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -60,13 +62,20 @@ class ScreenProducts extends StatelessWidget {
                                 height: 150,
                                 width: double.infinity,
                                 child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(10),
-                                  child: Image.network(
-                                    'https://admin.maaxkart.com/${data[index].image}',
-                                    fit: BoxFit.fill,
-                                  ),
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: FadeInImage.assetNetwork(
+                                      imageErrorBuilder:
+                                          (context, error, stackTrace) {
+                                        return Image.asset(
+                                            'asset/nope-not-here.webp');
+                                      },
+                                      placeholder:
+                                          'asset/istockphoto-1335247217-612x612.jpg',
+                                      image:
+                                          'https://admin.maaxkart.com/${data[index].image}'),
                                 ),
                               ),
+                              // Image.network(ex)
                               SizedBox(
                                 width: 100,
                                 child: Text(
@@ -83,7 +92,7 @@ class ScreenProducts extends StatelessWidget {
                                     data[index].companyName,
                                     overflow: TextOverflow.ellipsis,
                                   )),
-                              const Text('qty 6'),
+                              const Text('qty 15'),
                               const Text(
                                 '₹ 299',
                                 style: TextStyle(

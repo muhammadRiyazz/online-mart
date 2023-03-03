@@ -23,13 +23,16 @@ class QuandityBloc extends Bloc<QuandityEvent, QuandityState> {
     on<Decrease>((event, emit) {
       final newqty = state.quandity - 1;
 
-      if (newqty < 0) {
+      if (newqty < 1) {
         log('qty  ???????');
       } else {
         final total = newqty * event.price;
 
         emit(QuandityState(price: total, quandity: newqty));
       }
+    });
+    on<Newinitial>((event, emit) {
+      emit(QuandityState(price: event.price, quandity: event.qty));
     });
   }
 }
